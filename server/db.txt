@@ -1,0 +1,148 @@
+db.createCollection("users", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         title: "Users Object Validation",
+         required: ["name", "info", "gender", "birthDate", "username", "email", "password", "profileImage", "roles", "createdAt"],
+         properties: {
+            name: {
+               bsonType: "string",
+               description: "Name is required"
+            },
+            info: {
+               bsonType: "string",
+               description: "Info is required"
+            },
+            gender: {
+               bsonType: "string",
+               description: "Gender is required"
+            },
+            birthDate: {
+               bsonType: "date",
+               description: "birthDate is required"
+            },
+            username: {
+               bsonType: "string",
+               description: "Username is required"
+            },
+            email: {
+                bsonType : "string",
+                pattern : "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[A-Za-z]{2,4}",
+                description: "Email is not valid"
+            },
+            password: {
+               bsonType: "string",
+               description: "Password is required"
+            },
+            profileImage: {
+               bsonType: "string",
+               description: "profileImage is required"
+            },
+            roles: {
+               bsonType: "array",
+               items: {
+                  bsonType: "string"
+               }
+            },
+            createdAt: {
+               bsonType: "date",
+               description: "createdAt is required"
+            }
+         }
+      }
+   }
+})
+
+db.users.createIndex({
+    email: 1
+}, {
+    unique: true
+});
+
+db.users.createIndex({
+    username: 1
+}, {
+    unique: true
+});
+
+db.createCollection("friendships", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         title: "Friendships Object Validation",
+         required: ["key", "status"],
+         properties: {
+            key: {
+               bsonType: "string",
+               description: "Key is required"
+            },
+            status: {
+               bsonType: "string",
+               description: "Status is required"
+            }
+         }
+      }
+   }
+})
+
+db.friendships.createIndex({ key: 1})
+
+db.createCollection("notifications", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         title: "notifications Object Validation",
+         required: ["toUsername", "image", "type", "message", "createdAt"],
+         properties: {
+            toUsername: {
+               bsonType: "string",
+               description: "To Username is required"
+            },
+            image: {
+               bsonType: "string",
+               description: "Image is required"
+            },
+            type: {
+               bsonType: "string",
+               description: "Type is required"
+            },
+            message: {
+               bsonType: "string",
+               description: "Message is required"
+            },
+            createdAt: {
+               bsonType: "date",
+               description: "createdAt is required"
+            }
+         }
+      }
+   }
+})
+
+db.notifications.createIndex({ toUsername: 1, createdAt: -1})
+
+db.createCollection("chats", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         title: "Chats Object Validation",
+         required: ["key", "message", "sentAt"],
+         properties: {
+            key: {
+               bsonType: "string",
+               description: "Key is required"
+            },
+            message: {
+               bsonType: "string",
+               description: "Message is required"
+            },
+            sentAt: {
+               bsonType: "date",
+               description: "Sent At is required"
+            }
+         }
+      }
+   }
+})
+
+db.chats.createIndex({ key: 1, sentAt: 1})

@@ -1,0 +1,114 @@
+@use "../../../utils/mixins";
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  @include mixins.flex(center, center);
+  background: url("../../../assets/images/bg1.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#box {
+  background-color: white;
+  padding: 50px;
+  box-sizing: border-box;
+  width: 400px;
+  height: 520px;
+  position: absolute;
+  border-radius: 15px;
+  transition: 1s;
+}
+
+#box.success {
+  height: 700px;
+}
+
+.first_content {
+  width: 100%;
+  height: 100%;
+  @include mixins.flex(start, center);
+  flex-direction: column;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.second_content {
+  animation: 1s ease-out 0s 1 fadeOut;
+  width: 100%;
+  height: 100%;
+  @include mixins.flex(start, center);
+  flex-direction: column;
+
+  form {
+    @include mixins.flex(center, center);
+    flex-direction: column;
+
+    p {
+      font-size: 0.9rem;
+      color: rgb(32, 32, 32);
+      align-self: start;
+    }
+  }
+}
+
+.imageLabel {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border-color: rgb(50, 50, 50);
+  border-width: 2px;
+  border-style: solid;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.image {
+  display: none;
+}
+
+.title {
+  font-family: "Convergence", sans-serif;
+  font-size: 30px;
+  font-weight: 350;
+}
+
+.selector {
+  width: 100%;
+  display: grid;
+  gap: 2px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.fp {
+  position: absolute;
+  top: 16.3em;
+  left: 15.3em;
+  font-size: 0.9em;
+  text-decoration: none;
+  color: blue;
+  &:hover {
+    color: rgb(47, 47, 255);
+  }
+}
+
+.reg {
+  text-decoration: none;
+  color: blue;
+  &:hover {
+    color: rgb(47, 47, 255);
+    cursor: pointer;
+  }
+}

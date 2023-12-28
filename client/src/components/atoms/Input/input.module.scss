@@ -1,0 +1,190 @@
+.container1 {
+  position: relative;
+
+  .input {
+    height: 2.5em;
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1.4px solid rgb(92, 92, 92);
+    border-radius: 5px;
+    outline: none;
+    background: none;
+    box-sizing: border-box;
+
+    &:focus {
+      /* border-color: rgb(8, 116, 189); */
+      border: 2px solid rgb(8, 116, 189);
+      box-sizing: border-box;
+    }
+
+    &:focus ~ .label,
+    &:not(:placeholder-shown) ~ .label {
+      top: -9px;
+      font-size: 12px;
+      left: 5px;
+    }
+  }
+
+  .label {
+    font-family: "Convergence", sans-serif;
+    position: absolute;
+    left: 0.6em;
+    top: 0.8em;
+    cursor: text;
+    padding: 0 5px;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    background-color: white;
+    border-radius: 4px;
+  }
+
+  .visible {
+    width: 1.6em;
+    position: absolute;
+    top: 0.7em;
+    right: 0.6em;
+    cursor: pointer;
+
+    .eye {
+      width: 1.6em;
+    }
+
+    .in {
+      width: 1.6em;
+      transition: 300ms;
+      position: absolute;
+      opacity: 0;
+    }
+
+    .vi {
+      width: 1.6em;
+      transition: 300ms;
+      position: absolute;
+      opacity: 1;
+    }
+  }
+}
+
+.container2 {
+  input {
+    height: 30px;
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1.4px solid rgb(31, 31, 31);
+    border-radius: 5px;
+    outline: none;
+    background: none;
+    box-sizing: border-box;
+    margin-right: 10px;
+
+    &:focus {
+      border-color: rgb(35, 43, 254);
+    }
+  }
+}
+
+.container3 {
+  width: 100%;
+  form {
+    width: 100%;
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 1.3em;
+      outline: 0;
+      border-width: 0 0 2px;
+      border-color: rgb(31, 31, 31);
+
+      &:focus {
+        border-color: rgb(35, 43, 254);
+      }
+
+      &:disabled {
+        background-color: white;
+        border: none;
+      }
+    }
+  }
+
+  .edit {
+    width: 20px;
+    position: absolute;
+    top: 52px;
+    left: 380px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .checklist {
+    width: 30px;
+    position: absolute;
+    top: 49px;
+    left: 375px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.container4 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+
+  .input {
+    flex: 1;
+    height: 2em;
+    padding: 0.8em;
+    padding-left: 65px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: rgb(244, 244, 244);
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .label {
+    width: 50px;
+    height: 2em;
+    background-color: rgb(244, 244, 244);
+    position: absolute;
+    left: 10px;
+    border-radius: 8px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.container5 {
+  height: 100%;
+
+  .input {
+    // width: 900px;
+    width: 400px;
+    height: 100%;
+    padding: 13px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background-color: white;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

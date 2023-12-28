@@ -1,0 +1,42 @@
+.sideBar {
+  width: 400px;
+  height: 730px;
+  background-color: rgb(244, 244, 244);
+  position: absolute;
+  transition: left 200ms;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+
+  .header {
+    width: 100%;
+    height: 112.175px;
+    padding: 15px;
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #c212d4, #6030e0);
+    display: flex;
+    align-items: end;
+
+    div {
+      width: 300px;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 1.5em;
+        margin-left: 15px;
+        margin-right: 27px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      p {
+        font-family: "Convergence", sans-serif;
+        font-size: 1.4em;
+        color: white;
+      }
+    }
+  }
+}

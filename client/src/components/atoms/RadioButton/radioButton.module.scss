@@ -1,0 +1,31 @@
+@use "../../../utils/mixins";
+
+.radioButton {
+  width: 100%;
+  background-color: white;
+  border-color: rgb(91, 91, 91);
+  border-style: solid;
+  border-width: 1.2px;
+  border-radius: 5px;
+  padding: 0.6em;
+  font-size: 1rem;
+  @include mixins.flex(space-between, center);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .circle {
+    width: 9px;
+    height: 9px;
+    border-color: rgb(91, 91, 91);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+  }
+
+  .circleBlack {
+    background-color: #0095ff;
+    border-color: #0095ff;
+  }
+}

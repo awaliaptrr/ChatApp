@@ -1,0 +1,194 @@
+@use "../../../utils/mixins";
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  @include mixins.flex(center, center);
+  background: url("../../../assets/images/bg1.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.box {
+  background-color: rgb(228, 228, 228);
+  box-sizing: border-box;
+  width: 1500px;
+  height: 730px;
+  position: relative;
+  border-radius: 5px;
+  display: grid;
+  grid-template-areas:
+    "navArea mainArea"
+    "sectionArea mainArea";
+  grid-template-columns: 1fr 2.5fr;
+  grid-template-rows: 1fr 5.5fr;
+  gap: 0.8px;
+  overflow: hidden;
+
+  nav {
+    grid-area: navArea;
+    display: flex;
+    flex-direction: column;
+
+    .up {
+      flex: 1.2;
+      background-color: rgb(244, 244, 244);
+      display: flex;
+      padding: 5px;
+      box-sizing: border-box;
+
+      .profile {
+        padding-left: 15px;
+        flex: 1.3;
+        display: flex;
+        align-items: center;
+
+        div {
+          border-radius: 50%;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .navigation {
+        flex: 1.2;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        img {
+          width: 1.7em;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .chat {
+          width: 1.5em;
+        }
+
+        .bell {
+          width: 1.6em;
+        }
+
+        .options {
+          width: 1.6em;
+        }
+      }
+
+      .dropDown {
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        position: absolute;
+        top: 60px;
+        left: 270px;
+        width: 140px;
+        border-radius: 3px;
+        transition: 3s;
+        z-index: 10;
+
+        li {
+          font-size: 0.9em;
+          height: 30px;
+          display: flex;
+          align-items: center;
+          padding: 5px 15px;
+          color: rgb(39, 39, 39);
+
+          &:hover {
+            background-color: rgb(246, 246, 246);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .down {
+      flex: 1;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  main {
+    grid-area: mainArea;
+    background-color: rgb(244, 244, 244);
+    display: grid;
+    grid-template-areas: "content";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "header"
+      "content";
+    grid-template-rows: 1fr 10.1fr;
+  }
+
+  section {
+    grid-area: sectionArea;
+    background-color: rgb(255, 255, 255);
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 9px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgb(255, 255, 255);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(224, 224, 224, 0.5);
+      border-radius: 20px;
+      border: transparent;
+    }
+
+    ul {
+      li {
+        height: 75px;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          background-color: rgb(228, 228, 228);
+          cursor: pointer;
+        }
+
+        .image {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+        }
+
+        .info {
+          flex: 4;
+          height: 100%;
+          border-bottom: 1px solid rgb(228, 228, 228);
+          display: flex;
+          flex-direction: column;
+          box-sizing: border-box;
+
+          .up {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            .timestamp {
+              font-size: 0.8em;
+              margin-right: 13px;
+            }
+          }
+
+          .down {
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@use "../../../utils/mixins";
+
+.container {
+  position: relative;
+}
+
+.optionShow {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  border-color: rgb(91, 91, 91);
+  border-style: solid;
+  border-width: 1.2px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.optionNotShow {
+  display: none;
+}
+
+.button {
+  width: 100%;
+  background-color: white;
+  border-color: rgb(91, 91, 91);
+  border-style: solid;
+  border-width: 1.2px;
+  border-radius: 5px;
+  padding: 0.6em;
+  font-size: 1rem;
+  @include mixins.flex(space-between, center);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    width: 10px;
+    transition: 300ms;
+  }
+
+  .clicked {
+    transform: rotate(-180deg);
+  }
+}
+
+.lists {
+  height: 100%;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(188, 188, 188, 0.5);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+    border-radius: 20px;
+    border: transparent;
+  }
+
+  li {
+    margin-bottom: 1px;
+
+    &:hover {
+      background-color: #0095ff;
+      cursor: pointer;
+      .p {
+        color: white;
+      }
+    }
+
+    .p {
+      margin-left: 3px;
+      font-size: 1rem;
+    }
+  }
+}

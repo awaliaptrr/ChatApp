@@ -1,0 +1,46 @@
+.cropContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  .box {
+    height: 600px;
+    width: 1100px;
+    display: flex;
+
+    .first {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(148, 148, 148);
+    }
+
+    .second {
+      flex: 1;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      background-color: rgb(124, 124, 124);
+
+      .preview {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border-color: rgb(50, 50, 50);
+        border-width: 2px;
+        border-style: solid;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@use "../../../utils/mixins";
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  @include mixins.flex(center, center);
+  background: url("../../../assets/images/bg1.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.box {
+  background-color: white;
+  padding: 50px;
+  box-sizing: border-box;
+  width: 400px;
+  height: 480px;
+  position: absolute;
+  border-radius: 15px;
+  @include mixins.flex(start, center);
+  flex-direction: column;
+}
+
+.title {
+  font-family: "Convergence", sans-serif;
+  font-size: 30px;
+  font-weight: 350;
+}
+
+.fp {
+  position: absolute;
+  top: 16.3em;
+  left: 15.3em;
+  font-size: 0.9em;
+  text-decoration: none;
+  color: blue;
+  &:hover {
+    color: rgb(47, 47, 255);
+  }
+}
+
+.reg {
+  text-decoration: none;
+  color: blue;
+  &:hover {
+    color: rgb(47, 47, 255);
+    cursor: pointer;
+  }
+}
